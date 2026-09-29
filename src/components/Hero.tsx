@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { HeroStickers } from "@/components/HeroStickers";
 import { site } from "@/content/content";
 
 export function Hero() {
@@ -32,6 +33,7 @@ export function Hero() {
     >
       <div className="hero-wash" aria-hidden />
       <div className="grid-atmosphere" aria-hidden />
+      <HeroStickers />
 
       <motion.div
         className="relative z-10 mx-auto w-full max-w-6xl"
@@ -48,7 +50,7 @@ export function Hero() {
 
         <motion.h1
           variants={item}
-          className="font-display text-[clamp(2.75rem,12vw,7.5rem)] leading-[0.9] font-bold tracking-tight text-paper"
+          className="max-w-[14ch] font-display text-[clamp(2.75rem,12vw,7.5rem)] leading-[0.9] font-bold tracking-tight text-paper lg:max-w-none"
         >
           {site.name}
         </motion.h1>
