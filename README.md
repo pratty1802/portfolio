@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prateek Porwal — Portfolio
 
-## Getting Started
+Cool-studio personal site for resume use. Next.js + Tailwind + Framer Motion. Content lives in [`src/content/content.ts`](src/content/content.ts)—edit that file to add experience or projects, then redeploy.
 
-First, run the development server:
+## Local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy on Vercel (free Hobby)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repo to GitHub.
+2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
+3. Framework preset: **Next.js** (auto-detected). Leave build settings default.
+4. Click **Deploy**.
+5. Optional: Project → Settings → Domains → add `yourname.dev` (buy the domain elsewhere, point DNS to Vercel).
 
-## Learn More
+After the first deploy, every push to `main` redeploys automatically.
 
-To learn more about Next.js, take a look at the following resources:
+### Resume line
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+Portfolio: https://<your-vercel-url>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Updating content
 
-## Deploy on Vercel
+Edit `src/content/content.ts`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `site` — name, role line, about, contact links
+- `work` — selected work rows
+- `highlights` — compact extras (MCP, rate limit API)
+- `experience` — jobs / mentoring
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No CMS or backend required.

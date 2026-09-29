@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0b0d10;
+  --ink-elevated: #12151a;
+  --charcoal: #1a1f27;
+  --fog: #8b93a1;
+  --mist: #c4cad4;
+  --paper: #e8ecf1;
+  --mint: #3dffc8;
+  --mint-dim: rgba(61, 255, 200, 0.14);
+  --mint-glow: rgba(61, 255, 200, 0.22);
+  --line: rgba(232, 236, 241, 0.08);
+  --line-strong: rgba(232, 236, 241, 0.16);
+  --background: var(--ink);
+  --foreground: var(--paper);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-elevated: var(--ink-elevated);
+  --color-charcoal: var(--charcoal);
+  --color-fog: var(--fog);
+  --color-mist: var(--mist);
+  --color-paper: var(--paper);
+  --color-mint: var(--mint);
+  --color-mint-dim: var(--mint-dim);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--mint-dim);
+  color: var(--paper);
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.grid-atmosphere {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(232, 236, 241, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232, 236, 241, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent);
+  animation: grid-drift 28s linear infinite;
+}
+
+.hero-wash {
+  pointer-events: none;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: min(90vw, 860px);
+  height: min(70vh, 620px);
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(61, 255, 200, 0.12) 0%,
+    rgba(61, 255, 200, 0.04) 35%,
+    transparent 70%
+  );
+  filter: blur(8px);
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 72px 72px;
+  }
+}
+
+.link-draw {
+  background-image: linear-gradient(var(--mint), var(--mint));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size 0.35s ease, color 0.2s ease;
+}
+
+.link-draw:hover {
+  background-size: 100% 1.5px;
+  color: var(--mint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .grid-atmosphere {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
