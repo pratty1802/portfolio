@@ -28,7 +28,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-5 pb-16 pt-28 sm:px-8 sm:pb-24"
+      className="relative flex min-h-[100svh] flex-col justify-start overflow-hidden px-5 pb-16 pt-24 sm:px-8 sm:pb-24 sm:pt-28"
     >
       <div className="hero-wash" aria-hidden />
       <div className="grid-atmosphere" aria-hidden />
