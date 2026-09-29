@@ -29,7 +29,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col justify-start overflow-hidden px-5 pb-16 pt-24 sm:px-8 sm:pb-24 sm:pt-28"
+      className="relative flex min-h-0 flex-col justify-start overflow-hidden px-5 pb-12 pt-20 sm:min-h-[100svh] sm:px-8 sm:pb-24 sm:pt-28"
     >
       <div className="hero-wash" aria-hidden />
       <div className="grid-atmosphere" aria-hidden />
@@ -43,35 +43,41 @@ export function Hero() {
       >
         <motion.p
           variants={item}
-          className="mb-5 font-mono text-[11px] tracking-[0.22em] text-mint uppercase sm:text-xs"
+          className="mb-3 font-mono text-[10px] tracking-[0.22em] text-mint uppercase sm:mb-5 sm:text-xs"
         >
           Portfolio
         </motion.p>
 
         <motion.h1
           variants={item}
-          className="max-w-[14ch] font-display text-[clamp(2.75rem,12vw,7.5rem)] leading-[0.9] font-bold tracking-tight text-paper lg:max-w-none"
+          className="font-display text-[clamp(2rem,9.5vw,7.5rem)] leading-[0.95] font-bold tracking-tight text-balance text-paper sm:leading-[0.9]"
         >
           {site.name}
         </motion.h1>
 
         <motion.p
           variants={item}
-          className="mt-6 max-w-xl text-base leading-relaxed text-fog sm:text-lg"
+          className="mt-3 max-w-xl text-sm leading-snug text-fog sm:mt-6 sm:text-lg sm:leading-relaxed"
         >
-          {site.roleLine}
+          <span className="sm:hidden">
+            Senior Backend Engineer — Node.js, AWS & serverless
+          </span>
+          <span className="hidden sm:inline">{site.roleLine}</span>
         </motion.p>
 
-        <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
+        <motion.div
+          variants={item}
+          className="mt-6 flex flex-wrap gap-3 sm:mt-10 sm:gap-4"
+        >
           <a
             href="#work"
-            className="inline-flex items-center bg-mint px-5 py-3 font-mono text-xs tracking-[0.16em] text-ink uppercase transition hover:brightness-110"
+            className="inline-flex items-center bg-mint px-4 py-2.5 font-mono text-[11px] tracking-[0.16em] text-ink uppercase transition hover:brightness-110 sm:px-5 sm:py-3 sm:text-xs"
           >
             View work
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center border border-line-strong px-5 py-3 font-mono text-xs tracking-[0.16em] text-mist uppercase transition hover:border-mint hover:text-mint"
+            className="inline-flex items-center border border-line-strong px-4 py-2.5 font-mono text-[11px] tracking-[0.16em] text-mist uppercase transition hover:border-mint hover:text-mint sm:px-5 sm:py-3 sm:text-xs"
           >
             Get in touch
           </a>
