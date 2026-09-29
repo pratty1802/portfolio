@@ -34,6 +34,7 @@ export const site = {
   phoneDisplay: "+91 90798 03233",
   linkedin: "https://www.linkedin.com/in/prateek-porwal-0342b8121/",
   github: "https://github.com/pratty1802/",
+  medium: "https://medium.com/@porwalp25",
   about:
     "Senior Backend Engineer with 8.5+ years building scalable cloud-native backends—Node.js, AWS Serverless, Docker/ECS Fargate, DynamoDB, REST APIs—plus event-driven systems, multi-tenant SaaS, and AI/LLM integration. Also mentored and code-reviewed students in Udacity’s Front-End Developer Nanodegree.",
   education:
@@ -104,6 +105,17 @@ export const highlights: Highlight[] = [
       {
         label: "GitHub",
         href: "https://github.com/pratty1802/rate-limit-api",
+      },
+    ],
+  },
+  {
+    title: "Scaling backend performance",
+    description:
+      "Medium article on the right order of performance optimisations—practical guidance for backend systems that need to grow without premature complexity.",
+    links: [
+      {
+        label: "Read on Medium",
+        href: "https://medium.com/@porwalp25/how-to-scale-backend-performance-the-right-order-of-performance-optimisations-42aaa2f245d0",
       },
     ],
   },

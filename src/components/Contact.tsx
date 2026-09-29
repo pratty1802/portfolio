@@ -17,7 +17,7 @@ export function Contact() {
           </h2>
           <p className="mt-5 max-w-lg text-base text-fog">
             Open to senior backend and cloud-native roles. Reach out by email,
-            phone, or connect on LinkedIn / GitHub.
+            phone, or connect on LinkedIn / GitHub / Medium.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-8">
@@ -48,6 +48,14 @@ export function Contact() {
               className="font-mono text-sm tracking-[0.14em] text-mist uppercase link-draw"
             >
               GitHub ↗
+            </a>
+            <a
+              href={site.medium}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-sm tracking-[0.14em] text-mist uppercase link-draw"
+            >
+              Medium ↗
             </a>
           </div>
         </Reveal>
